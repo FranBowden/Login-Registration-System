@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 void logMessage(std::string msg) {
@@ -20,6 +21,33 @@ int validateInput(int min, int max) {
 int main(int argc, const char * argv[]) {
     logMessage("Please enter one of the following options:\n1. Login\n2. Register");
     int input = validateInput(1, 2);
+    
+    string username;
+    string password;
+    char answer;
+    
+    switch(input) {
+        case 1:
+            logMessage("Login");
+            logMessage("-----------");
+            
+            cout << "Username: ";
+            cin >> username;
+            cout << "Password: ";
+            cin >> password;
+            break;
+        case 2:
+            logMessage("You have selected registration");
+            logMessage("Please enter a username: ");
+            cin >> username;
+            logMessage("Please enter a password: ");
+            cin >> password;
+            logMessage("Account successfully created! Would you like to login (Y) Yes (N) No");
+            cin >> answer;
+            
+            break;
+            
+    }
     return 0;
 }
 
